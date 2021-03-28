@@ -1,6 +1,8 @@
 # Componentes Especiales para REACT
 
 ## 1. SweetAlert:
+[Documentacion](https://sweetalert.js.org/)
+
 * Instalacion por NPM:
 ```
 npm install sweetalert --save
@@ -37,5 +39,22 @@ swal("Good job!", "You clicked the button!", "success", {
 swal("Click on either the button or outside the modal.")
 .then((value) => {
   swal(`The returned value is: ${value}`);
+});
+
+swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this imaginary file!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Poof! Your imaginary file has been deleted!", {
+      icon: "success",
+    });
+  } else {
+    swal("Your imaginary file is safe!");
+  }
 });
 ```
